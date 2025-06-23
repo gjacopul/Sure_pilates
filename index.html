@@ -68,9 +68,19 @@
     <p>📱 <a href="https://wa.me/5491127664584" target="_blank">+54 9 11 2766-4584</a></p>
     <p>📸 Instagram: <a href="https://instagram.com/surepilatesreformer" target="_blank">@surepilatesreformer</a></p>
 
-    <!-- Google Form embebido -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe2WDXgVOMMARcUd5hRzPjNhJ4o-q7juttFT5Ag8300J58PoA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-  </section>
+    <!-- Botón para mostrar el formulario -->
+  <button onclick="document.getElementById('formulario').style.display='block'">
+    Reservar ahora
+  </button>
+
+  <!-- Formulario oculto -->
+  <div id="formulario" style="display:none; margin-top:1rem;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe2WDXgVOMMARcUd5hRzPjNhJ4o-q7juttFT5Ag8300J58PoA/viewform?embedded=true"
+            frameborder="0" marginheight="0" marginwidth="0" width="100%" height="800px">
+      Cargando…
+    </iframe>
+  </div>
+</section>
 
   <footer>
     <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
