@@ -106,6 +106,55 @@
   </div>
 </section>
 
+  <section id="reserva-clases" style="padding: 2rem;">
+  <h2>Reservá tu clase</h2>
+  <form id="form-reserva" style="max-width: 400px;">
+    <label for="dia">Día:</label><br>
+    <select id="dia" name="dia" required>
+      <option value="">Seleccioná un día</option>
+      <option value="lunes">Lunes</option>
+      <option value="martes">Martes</option>
+      <option value="miércoles">Miércoles</option>
+      <option value="jueves">Jueves</option>
+      <option value="viernes">Viernes</option>
+      <option value="sábado">Sábado</option>
+    </select><br><br>
+
+    <label for="hora">Horario:</label><br>
+    <select id="hora" name="hora" required>
+      <option value="">Seleccioná un horario</option>
+      <option value="09:00">09:00</option>
+      <option value="10:00">10:00</option>
+      <option value="17:00">17:00</option>
+      <option value="18:00">18:00</option>
+    </select><br><br>
+
+    <label for="nombre">Tu nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="email">Tu email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button type="submit">Reservar clase</button>
+  </form>
+
+  <div id="mensaje-confirmacion" style="margin-top: 1rem; font-weight: bold;"></div>
+</section>
+
+<script>
+  document.getElementById("form-reserva").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const nombre = document.getElementById("nombre").value;
+    const dia = document.getElementById("dia").value;
+    const hora = document.getElementById("hora").value;
+
+    document.getElementById("mensaje-confirmacion").textContent =
+      `Gracias ${nombre}, tu clase fue reservada para el ${dia} a las ${hora}.`;
+    
+    // Acá podrías enviar el formulario a un backend o Google Sheets si querés guardar las reservas
+  });
+</script>
+
   <footer>
     <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
   </footer>
