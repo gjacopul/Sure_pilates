@@ -119,6 +119,7 @@
     const data = new FormData(form);
     const url = "https://script.google.com/macros/s/AKfycbxIgTpjppDPwgmkrLz1TMqTvp93TeMEU0OoFZp7rtCxMmWHbiuCJqNzvIuMvvZC4n_KhA/exec";
 
+    console.log("Data extraida de los formularios: " + data);
     const params = new URLSearchParams();
     for (const [key, value] of data.entries()) {
       params.append(key, value);
