@@ -76,54 +76,69 @@
   <a href="https://wa.me/5491127664584" target="_blank">+54 9 11 2766-4584</a>
     <p>📸 Instagram: <a href="https://instagram.com/surepilatesreformer" target="_blank">@surepilatesreformer</a></p>
   
-  <section id="reserva-clases" style="padding: 3rem;">
+  <section id="reserva-clases" style="padding: 2rem;">
   <h2>Reservá tu clase</h2>
-  <form id="form-reserva" style="max-width: 400px;">
+  <form id="formularioReserva" style="max-width: 400px;">
+    <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+    <input type="email" name="email" placeholder="Tu email" required><br><br>
+
     <label for="dia">Día:</label><br>
-    <select id="dia" name="dia" required>
-      <option value="">Seleccioná un día</option>
-      <option value="lunes">Lunes</option>
-      <option value="martes">Martes</option>
-      <option value="miércoles">Miércoles</option>
-      <option value="jueves">Jueves</option>
-      <option value="viernes">Viernes</option>
-      <option value="sábado">Sábado</option>
+    <select name="dia" required>
+      <option value="">Seleccionar día</option>
+      <option value="Lunes">Lunes</option>
+      <option value="Martes">Martes</option>
+      <option value="Miércoles">Miércoles</option>
+      <option value="Jueves">Jueves</option>
+      <option value="Viernes">Viernes</option>
+      <option value="Sábado">Sábado</option>
     </select><br><br>
 
-    <label for="hora">Horario:</label><br>
-    <select id="hora" name="hora" required>
-      <option value="">Seleccioná un horario</option>
+    <label for="horario">Horario:</label><br>
+    <select name="horario" required>
+      <option value="">Seleccionar horario</option>
       <option value="09:00">09:00</option>
       <option value="10:00">10:00</option>
       <option value="17:00">17:00</option>
       <option value="18:00">18:00</option>
     </select><br><br>
 
-    <label for="nombre">Tu nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-
-    <label for="email">Tu email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <button type="submit">Reservar clase</button>
+    <button type="submit">Reservar</button>
   </form>
 
-  <div id="mensaje-confirmacion" style="margin-top: 1rem; font-weight: bold;"></div>
+  <div id="mensaje" style="margin-top: 1rem; font-weight: bold;"></div>
 </section>
 
 <script>
-  document.getElementById("form-reserva").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const nombre = document.getElementById("nombre").value;
-    const dia = document.getElementById("dia").value;
-    const hora = document.getElementById("hora").value;
+  const form = document.getElementById('formularioReserva');
+  const mensajeDiv = document.getElementById('mensaje');
 
-    document.getElementById("mensaje-confirmacion").textContent =
-      `Gracias ${nombre}, tu clase fue reservada para el ${dia} a las ${hora}.`;
-    
-    // Acá podrías enviar el formulario a un backend o Google Sheets si querés guardar las reservas
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const url = "https://script.google.com/macros/s/AKfycbxIgTpjppDPwgmkrLz1TMqTvp93TeMEU0OoFZp7rtCxMmWHbiuCJqNzvIuMvvZC4n_KhA/exec";
+
+    const params = new URLSearchParams();
+    for (const [key, value] of data.entries()) {
+      params.append(key, value);
+    }
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: params,
+      });
+      const mensaje = await response.text();
+      mensajeDiv.textContent = mensaje;
+      mensajeDiv.style.color = mensaje.includes("confirmada") ? "green" : "red";
+      if (mensaje.includes("confirmada")) form.reset();
+    } catch (error) {
+      mensajeDiv.textContent = "Error al conectar con el servidor.";
+      mensajeDiv.style.color = "red";
+    }
   });
 </script>
+
 
   <footer>
     <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
