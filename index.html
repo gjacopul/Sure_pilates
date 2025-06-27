@@ -134,7 +134,7 @@
       mensajeDiv.style.color = mensaje.includes("confirmada") ? "green" : "red";
       if (mensaje.includes("confirmada")) form.reset();
     } catch (error) {
-      mensajeDiv.textContent = "Error al conectar con el servidor.";
+      mensajeDiv.textContent = "Error:" + error ;
       mensajeDiv.style.color = "red";
     }
   });
