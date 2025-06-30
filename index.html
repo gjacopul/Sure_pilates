@@ -76,12 +76,11 @@
   <a href="https://wa.me/5491127664584" target="_blank">+54 9 11 2766-4584</a>
     <p>📸 Instagram: <a href="https://instagram.com/surepilatesreformer" target="_blank">@surepilatesreformer</a></p>
   
-  <section id="reserva-clases" style="padding: 2rem;">
+<section id="reserva-clases" style="padding: 2rem;">
   <h2>Reservá tu clase</h2>
   <form id="formularioReserva" style="max-width: 400px;">
     <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
     <input type="email" name="email" placeholder="Tu email" required><br><br>
-    <input type="text" name="Celular" placeholder="Celular" required><br><br>
 
     <label for="dia">Día:</label><br>
     <select name="dia" required>
@@ -119,7 +118,6 @@
     const data = new FormData(form);
     const url = "https://script.google.com/macros/s/AKfycbxIgTpjppDPwgmkrLz1TMqTvp93TeMEU0OoFZp7rtCxMmWHbiuCJqNzvIuMvvZC4n_KhA/exec";
 
-    console.log("Data extraida de los formularios: " + data);
     const params = new URLSearchParams();
     for (const [key, value] of data.entries()) {
       params.append(key, value);
@@ -135,13 +133,11 @@
       mensajeDiv.style.color = mensaje.includes("confirmada") ? "green" : "red";
       if (mensaje.includes("confirmada")) form.reset();
     } catch (error) {
-      mensajeDiv.textContent = "Error:" + error ;
+      mensajeDiv.textContent = "Error al conectar con el servidor.";
       mensajeDiv.style.color = "red";
     }
   });
 </script>
-
-
   <footer>
     <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
   </footer>
