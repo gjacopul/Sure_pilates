@@ -10,6 +10,45 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
+
+.botones-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.botones-contacto .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+  border: none;
+}
+
+.btn.whatsapp {
+  background: #25D366;
+}
+
+.btn.instagram {
+  background: #E4405F;
+}
+
+.btn.reserva {
+  background: #a97455;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+    
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -69,6 +108,23 @@
   </section>
 
   <section id="contacto">
+    
+    <div class="botones-contacto">
+  <a href="https://wa.me/5491127664584" target="_blank" class="btn whatsapp">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+
+  <a href="https://instagram.com/surepilatesreformer" target="_blank" class="btn instagram">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+
+  <button onclick="document.getElementById('formWrapper').style.display='block'" class="btn reserva">
+    Reservá tu espacio
+  </button>
+</div>
+
+    
+    
     <h2>Contacto</h2>
     
     <p>📍 Temperley</p>
