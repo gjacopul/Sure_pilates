@@ -76,68 +76,54 @@
   <a href="https://wa.me/5491127664584" target="_blank">+54 9 11 2766-4584</a>
     <p>📸 Instagram: <a href="https://instagram.com/surepilatesreformer" target="_blank">@surepilatesreformer</a></p>
   
-<section id="reserva-clases" style="padding: 2rem;">
-  <h2>Reservá tu clase</h2>
-  <form id="formularioReserva" style="max-width: 400px;">
-    <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
-    <input type="email" name="email" placeholder="Tu email" required><br><br>
+<!-- Botón que despliega el formulario -->
+<div style="text-align:center;margin-top:2rem;">
+  <button
+    onclick="document.getElementById('formWrapper').style.display='block'"
+    style="background:#a97455;color:#fff;padding:0.8rem 2rem;
+           font-size:1.1rem;border:none;border-radius:30px;
+           cursor:pointer;transition:background 0.3s;box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+    🧘‍♀️ Reservá tu espacio
+  </button>
+</div>
 
-    <label for="dia">Día:</label><br>
-    <select name="dia" required>
-      <option value="">Seleccionar día</option>
-      <option value="Lunes">Lunes</option>
-      <option value="Martes">Martes</option>
-      <option value="Miércoles">Miércoles</option>
-      <option value="Jueves">Jueves</option>
-      <option value="Viernes">Viernes</option>
-      <option value="Sábado">Sábado</option>
-    </select><br><br>
-
-    <label for="horario">Horario:</label><br>
-    <select name="horario" required>
-      <option value="">Seleccionar horario</option>
-      <option value="09:00">09:00</option>
-      <option value="10:00">10:00</option>
-      <option value="17:00">17:00</option>
-      <option value="18:00">18:00</option>
-    </select><br><br>
-
-    <button type="submit">Reservar</button>
+<!-- Formulario oculto -->
+<div id="formWrapper" style="display:none;max-width:600px;margin:2rem auto;">
+  <form id="reservaForm">
+    <input name="nombre"  type="text"  placeholder="Tu nombre"   required /><br/>
+    <input name="email"   type="email" placeholder="Correo"      required /><br/>
+    <textarea name="mensaje" placeholder="Mensaje" rows="4"></textarea><br/>
+    <button type="submit">Enviar</button>
   </form>
-
-  <div id="mensaje" style="margin-top: 1rem; font-weight: bold;"></div>
-</section>
+  <p id="formMsg" style="text-align:center;margin-top:1rem;"></p>
+</div>
 
 <script>
-  const form = document.getElementById('formularioReserva');
-  const mensajeDiv = document.getElementById('mensaje');
+const scriptURL = 'https://script.google.com/macros/s/AKfycb.../exec'; // tu URL /exec
+const form      = document.getElementById('reservaForm');
+const msgBox    = document.getElementById('formMsg');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  msgBox.textContent = 'Enviando…';
 
-    const data = new FormData(form);
-    const url = "https://script.google.com/macros/s/AKfycbxIgTpjppDPwgmkrLz1TMqTvp93TeMEU0OoFZp7rtCxMmWHbiuCJqNzvIuMvvZC4n_KhA/exec";
-
-    const params = new URLSearchParams();
-    for (const [key, value] of data.entries()) {
-      params.append(key, value);
-    }
-
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        body: params,
-      });
-      const mensaje = await response.text();
-      mensajeDiv.textContent = mensaje;
-      mensajeDiv.style.color = mensaje.includes("confirmada") ? "green" : "red";
-      if (mensaje.includes("confirmada")) form.reset();
-    } catch (error) {
-      mensajeDiv.textContent = "Error al conectar con el servidor.";
-      mensajeDiv.style.color = "red";
-    }
-  });
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(res => res.json())
+    .then(d  => {
+      if (d.status === 'success') {
+        msgBox.textContent = '¡Gracias! Te contactaremos pronto.';
+        form.reset();
+      } else {
+        throw d.message || 'Error desconocido';
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      msgBox.textContent = 'Ocurrió un problema; intenta de nuevo.';
+    });
+});
 </script>
+
   <footer>
     <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
   </footer>
