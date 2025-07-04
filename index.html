@@ -185,12 +185,11 @@ button:hover {
       <label for="horario">Elige el horario:</label>
       <select name="horario" id="horario" required>
         <option value="" disabled selected>Seleccionar horario</option>
-        <option>08:00</option>
+        <option>09:00</option>
         <option>10:00</option>
-        <option>12:00</option>
-        <option>14:00</option>
-        <option>16:00</option>
+        <option>17:00</option>
         <option>18:00</option>
+        <option>19:00</option>
       </select>
 
       <textarea name="mensaje" placeholder="Mensaje opcional" rows="4"></textarea>
@@ -208,7 +207,7 @@ button:hover {
 <!-- SCRIPT DE ENVÍO DEL FORMULARIO -->
 <script>
 // URL de Apps Script aquí
-const scriptURL = ''; 
+const scriptURL = 'https://docs.google.com/spreadsheets/d/1_Kkh8Jo7ZBYxupqoaIB2tg2ItygiDgwRpFMD0F-ZT0Q/edit?usp=sharing'; 
 const form = document.getElementById('reservaForm');
 const msgBox = document.getElementById('formMsg');
 
