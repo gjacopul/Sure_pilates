@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sure Pilates - Estudio Reformer en Temperley</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -15,20 +18,21 @@
     }
     header {
       background-color: #f3e8dc;
-      padding: 2rem;
+      padding: 4rem;
       text-align: center;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #6b4e3d;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: #6b4e3d;
-      text-decoration: none;
-      font-weight: 300;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  margin: 0;
+  color: #6b4e3d;
+}
+  nav a:hover {
+  color: #a97455; /* un tono más claro o distinto */
+  text-decoration: none; /* o `none` si no querés subrayado */
+  font-weight: 400; /* opcional: hacer el texto más fuerte al pasar el mouse */
+  
+}
     }
     section {
       padding: 2rem;
@@ -41,31 +45,10 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
-    .formulario label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-    .formulario input, .formulario textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.3rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: inherit;
-    }
-    .formulario button {
-      margin-top: 1rem;
-      background-color: #c8b6a6;
-      color: white;
+    iframe {
       border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .formulario button:hover {
-      background-color: #bca48f;
+      width: 100%;
+      height: 800px;
     }
   </style>
 </head>
@@ -80,33 +63,29 @@
   </header>
 
   <section id="sobre">
-    <h2>Sobre Sure Pilates</h2>
-    <p>Somos un estudio dedicado al bienestar integral a través del método Pilates Reformer. Ofrecemos clases personalizadas en un ambiente tranquilo y delicado en el corazón de Temperley.</p>
+    
+    <p>    Somos un estudio dedicado al bienestar integral a través del método Pilates Reformer 
+             Encontraras un ambiente armonioso y delicado en el corazón de Temperley.</p>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
     <p>📍 Temperley</p>
-    <p>📱 <a href="https://wa.me/5491127664584" target="_blank">+54 9 11 2766-4584</a></p>
+    <p><a href="https://wa.me/5491127664584" target="_blank"
+   style="background:#25D366;color:white;padding:0.6rem 1.2rem;
+          border-radius:30px;text-decoration:none;display:inline-flex;
+          align-items:center;gap:0.5rem;font-weight:600;">
+  <i class="fab fa-whatsapp"></i> WhatsApp
+    </p>
 
-    <form class="formulario">
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required>
+    <p href="https://instagram.com/surepilatesreformer" target="_blank"
+   style="background:#E4405F;color:white;padding:0.6rem 1.2rem;
+          border-radius:30px;text-decoration:none;display:inline-flex;
+          align-items:center;gap:0.5rem;font-weight:600;">
+  <i class="fab fa-instagram"></i> Instagram
+  </p>
 
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" required>
 
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
-  </footer>
-  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sure Pilates - Reserva tu espacio</title>
@@ -162,9 +141,6 @@
     font-weight: bold;
   }
 </style>
-</head>
-
-<body>
 
 <div style="text-align:center;margin-top:2rem;">
   <button
@@ -172,7 +148,7 @@
     style="background:#a97455;color:#fff;padding:0.8rem 2rem;
            font-size:1.1rem;border:none;border-radius:30px;
            cursor:pointer;transition:background 0.3s;box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-       Reservá tu espacio
+     Reservá tu espacio
   </button>
 </div>
 
@@ -210,7 +186,7 @@
 </div>
 
 <script>
-const scriptURL = 'https://github.com/gjacopul/Sure_pilates';
+const scriptURL = '';
 const form = document.getElementById('reservaForm');
 const msgBox = document.getElementById('formMsg');
 
@@ -235,6 +211,10 @@ form.addEventListener('submit', e => {
 });
 </script>
 
+  <footer>
+    <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
+
 
