@@ -12,7 +12,7 @@
 
 <!-- Estilos personalizados -->
 <style>
-/* Estilos generales */
+/* 🎨 Estilos generales */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -20,7 +20,7 @@ body {
   color: #333;
 }
 
-/* Cabecera */
+/* 🧱 Cabecera */
 header {
   background-color: #f3e8dc;
   padding: 4rem;
@@ -40,14 +40,14 @@ nav a:hover {
   font-weight: 400;
 }
 
-/* Secciones */
+/* 🧾 Secciones */
 section {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
 }
 
-/* Pie de página */
+/* 🔻 Pie de página */
 footer {
   background-color: #f3e8dc;
   text-align: center;
@@ -55,7 +55,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Botones de contacto */
+/* 🔘 Botones de contacto */
 .botones-contacto {
   display: flex;
   flex-wrap: wrap;
@@ -76,15 +76,29 @@ footer {
   font-size: 1rem;
   transition: background 0.3s;
   border: none;
-  }
+  width: auto;
+}
 
 .btn.whatsapp { background: #25D366; }
 .btn.instagram { background: #E4405F; }
-.btn.reserva { background: #a97455; width: auto;}
+.btn.reserva { background: #a97455; }
 
 .btn:hover { opacity: 0.9; }
 
-/* Formulario */
+/* 📱 Responsividad: en pantallas pequeñas, botones en columna */
+@media (max-width: 600px) {
+  .botones-contacto {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botones-contacto .btn {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* 📋 Formulario */
 #formWrapper {
   display: none;
   max-width: 600px;
@@ -131,7 +145,7 @@ button:hover {
 
 <body>
 
-<!-- CABECERA -->
+<!-- 🪷 CABECERA -->
 <header>
   <h1>Sure Pilates</h1>
   <p>Estudio de Pilates Reformer en Temperley</p>
@@ -141,16 +155,16 @@ button:hover {
   </nav>
 </header>
 
-<!-- SECCIÓN SOBRE NOSOTROS -->
+<!-- 🌸 SECCIÓN SOBRE NOSOTROS -->
 <section id="sobre">
   <p>Somos un estudio dedicado al bienestar integral a través del método Pilates Reformer. Encontrarás un ambiente armonioso y delicado en el corazón de Temperley.</p>
 </section>
 
-<!-- SECCIÓN CONTACTO -->
+<!-- 📍 SECCIÓN CONTACTO -->
 <section id="contacto">
   <p>📍 Temperley - 14 de Julio 25</p>
 
-  <!-- BOTONES DE CONTACTO -->
+  <!-- 🔘 BOTONES DE CONTACTO -->
   <div class="botones-contacto">
     <a href="https://wa.me/5491127664584" target="_blank" class="btn whatsapp">
       <i class="fab fa-whatsapp"></i> WhatsApp
@@ -165,7 +179,7 @@ button:hover {
     </button>
   </div>
 
-  <!-- FORMULARIO DE RESERVA -->
+  <!-- 📋 FORMULARIO DE RESERVA -->
   <div id="formWrapper">
     <form id="reservaForm">
       <input name="nombre" type="text" placeholder="Tu nombre" required>
@@ -199,15 +213,15 @@ button:hover {
   </div>
 </section>
 
-<!-- PIE DE PÁGINA -->
+<!-- 🧾 PIE DE PÁGINA -->
 <footer>
   <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
 </footer>
 
-<!-- SCRIPT DE ENVÍO DEL FORMULARIO -->
+<!-- 🚀 SCRIPT DE ENVÍO DEL FORMULARIO -->
 <script>
 // URL de Apps Script aquí
-const scriptURL = 'https://docs.google.com/spreadsheets/d/1_Kkh8Jo7ZBYxupqoaIB2tg2ItygiDgwRpFMD0F-ZT0Q/edit?usp=sharing'; 
+const scriptURL = 'https://docs.google.com/spreadsheets/d/1_Kkh8Jo7ZBYxupqoaIB2tg2ItygiDgwRpFMD0F-ZT0Q/edit?gid=0#gid=0';
 const form = document.getElementById('reservaForm');
 const msgBox = document.getElementById('formMsg');
 
@@ -234,6 +248,5 @@ form.addEventListener('submit', e => {
 
 </body>
 </html>
-
 
 
