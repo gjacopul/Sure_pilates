@@ -1,221 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sure Pilates - Estudio Reformer en Temperley</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sure Pilates - Estudio Reformer en Temperley</title>
 
-  <style>
+<!-- Fuentes y librerías externas -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  .botones-contacto {
+<!-- Estilos personalizados -->
+<style>
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fefaf6;
+  color: #333;
+}
+
+/* Cabecera */
+header {
+  background-color: #f3e8dc;
+  padding: 4rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  margin: 0;
+  color: #6b4e3d;
+}
+
+nav a:hover {
+  color: #a97455;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* Secciones */
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Pie de página */
+footer {
+  background-color: #f3e8dc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Botones de contacto */
+.botones-contacto {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1rem 0;
 }
 
-  .botones-contacto .btn {
-   display: inline-flex;
-   align-items: center;
-   gap: 0.5rem;
-   padding: 0.6rem 1.2rem;
-   border-radius: 30px;
-   text-decoration: none;
-   font-weight: 600;
-   color: white;
-   cursor: pointer;
-   font-size: 1rem;
-   transition: background 0.3s;
-   border: none;
+.botones-contacto .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+  border: none;
 }
 
- .btn.whatsapp {
-  background: #25D366;
+.btn.whatsapp { background: #25D366; }
+.btn.instagram { background: #E4405F; }
+.btn.reserva { background: #a97455; }
+
+.btn:hover { opacity: 0.9; }
+
+/* Formulario */
+#formWrapper {
+  display: none;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.btn.instagram {
-  background: #E4405F;
+#formWrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.btn.reserva {
+input, select, textarea, button {
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
   background: #a97455;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.btn:hover {
-  opacity: 0.9;
+button:hover {
+  background: #8e5e45;
 }
-    
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fefaf6;
-      color: #333;
-    }
-    header {
-      background-color: #f3e8dc;
-      padding: 4rem;
-      text-align: center;
-    }
-    header h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3.5rem;
-  margin: 0;
-  color: #6b4e3d;
+
+#formMsg {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
 }
-  nav a:hover {
-  color: #a97455; /* un tono más claro o distinto */
-  text-decoration: none; /* o `none` si no querés subrayado */
-  font-weight: 400; /* opcional: hacer el texto más fuerte al pasar el mouse */
-  
-}
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    footer {
-      background-color: #f3e8dc;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-    iframe {
-      border: none;
-      width: 100%;
-      height: 800px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Sure Pilates</h1>
-    <p>Estudio de Pilates Reformer en Temperley</p>
-    <nav>
-      <a href="#sobre">Sobre Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <section id="sobre">
-    
-    <p>    Somos un estudio dedicado al bienestar integral a través del método Pilates Reformer 
-             Encontraras un ambiente armonioso y delicado en el corazón de Temperley.</p>
-  
-<section id="contacto">
-
-<p>📍 Temperley - 14 de Julio 25 </p>
-    
-<div class="botones-contacto">
-  <a href="https://wa.me/5491127664584" target="_blank" class="btn whatsapp">
-    <i class="fab fa-whatsapp"></i> WhatsApp
-  </a>
-
-  <a href="https://instagram.com/surepilatesreformer" target="_blank" class="btn instagram">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-
-  <button onclick="document.getElementById('formWrapper').style.display='block'" class="btn reserva">
-    Reservá tu espacio
-  </button>
-</div>
-
-  
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sure Pilates - Reserva tu espacio</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fefaf6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-
-  #formWrapper {
-    display: none;
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-
-  #formWrapper form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  input, select, textarea, button {
-    font-size: 1rem;
-    padding: 0.6rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  button {
-    background: #a97455;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  button:hover {
-    background: #8e5e45;
-  }
-
-  #formMsg {
-    text-align: center;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
 </style>
+</head>
 
-<div id="formWrapper">
-  <form id="reservaForm">
-    <input name="nombre" type="text" placeholder="Tu nombre" required />
-    <input name="email" type="email" placeholder="Correo" required />
+<body>
 
-    <label for="dia">Elige el día:</label>
-    <select name="dia" id="dia" required>
-      <option value="" disabled selected>Seleccionar día</option>
-      <option>Lunes</option>
-      <option>Martes</option>
-      <option>Miércoles</option>
-      <option>Jueves</option>
-      <option>Viernes</option>
-      <option>Sábado</option>
-    </select>
+<!-- CABECERA -->
+<header>
+  <h1>Sure Pilates</h1>
+  <p>Estudio de Pilates Reformer en Temperley</p>
+  <nav>
+    <a href="#sobre">Sobre Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
 
-    <label for="horario">Elige el horario:</label>
-    <select name="horario" id="horario" required>
-      <option value="" disabled selected>Seleccionar horario</option>
-      <option>08:00</option>
-      <option>10:00</option>
-      <option>12:00</option>
-      <option>14:00</option>
-      <option>16:00</option>
-      <option>18:00</option>
-    </select>
+<!-- SECCIÓN SOBRE NOSOTROS -->
+<section id="sobre">
+  <p>Somos un estudio dedicado al bienestar integral a través del método Pilates Reformer. Encontrarás un ambiente armonioso y delicado en el corazón de Temperley.</p>
+</section>
 
-    <textarea name="mensaje" placeholder="Mensaje opcional" rows="4"></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-  <p id="formMsg"></p>
-</div>
+<!-- SECCIÓN CONTACTO -->
+<section id="contacto">
+  <p>📍 Temperley - 14 de Julio 25</p>
 
+  <!-- BOTONES DE CONTACTO -->
+  <div class="botones-contacto">
+    <a href="https://wa.me/5491127664584" target="_blank" class="btn whatsapp">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <a href="https://instagram.com/surepilatesreformer" target="_blank" class="btn instagram">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <button onclick="document.getElementById('formWrapper').style.display='block'" class="btn reserva">
+      Reservá tu espacio
+    </button>
+  </div>
+
+  <!-- FORMULARIO DE RESERVA -->
+  <div id="formWrapper">
+    <form id="reservaForm">
+      <input name="nombre" type="text" placeholder="Tu nombre" required>
+      <input name="email" type="email" placeholder="Correo" required>
+
+      <label for="dia">Elige el día:</label>
+      <select name="dia" id="dia" required>
+        <option value="" disabled selected>Seleccionar día</option>
+        <option>Lunes</option>
+        <option>Martes</option>
+        <option>Miércoles</option>
+        <option>Jueves</option>
+        <option>Viernes</option>
+        <option>Sábado</option>
+      </select>
+
+      <label for="horario">Elige el horario:</label>
+      <select name="horario" id="horario" required>
+        <option value="" disabled selected>Seleccionar horario</option>
+        <option>08:00</option>
+        <option>10:00</option>
+        <option>12:00</option>
+        <option>14:00</option>
+        <option>16:00</option>
+        <option>18:00</option>
+      </select>
+
+      <textarea name="mensaje" placeholder="Mensaje opcional" rows="4"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="formMsg"></p>
+  </div>
+</section>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+  <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
+</footer>
+
+<!-- SCRIPT DE ENVÍO DEL FORMULARIO -->
 <script>
-const scriptURL = '';
+// URL de Apps Script aquí
+const scriptURL = ''; 
 const form = document.getElementById('reservaForm');
 const msgBox = document.getElementById('formMsg');
 
@@ -225,7 +218,7 @@ form.addEventListener('submit', e => {
 
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(res => res.json())
-    .then(d  => {
+    .then(d => {
       if (d.status === 'success') {
         msgBox.textContent = '✅ ¡Gracias! Tu reserva fue registrada.';
         form.reset();
@@ -240,10 +233,8 @@ form.addEventListener('submit', e => {
 });
 </script>
 
-  <footer>
-    <p>&copy; 2025 Sure Pilates. Todos los derechos reservados.</p>
-  </footer>
 </body>
 </html>
+
 
 
